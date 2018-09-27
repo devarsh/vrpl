@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "git.autofetch": true,
+    "window.zoomLevel": 0,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.installDependenciesWhenBuilding": false,
+    "go.formatTool": "gofmt",
+    "go.gopath": "/Users/acuteinfo/Desktop/go",
+    "git.enableSmartCommit": true,
+    "workbench.colorTheme": "Code Blue",
+}
