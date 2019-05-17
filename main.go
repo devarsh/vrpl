@@ -11,6 +11,7 @@ import (
 	"github.com/devarsh/vrpl/util"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
+	"github.com/go-chi/cors"
 	"github.com/go-chi/render"
 	"github.com/jinzhu/gorm"
 )
@@ -31,8 +32,16 @@ func init() {
 
 func Routes() *chi.Mux {
 	router := chi.NewRouter()
+	cors := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"GET", "POST", "PUT", "OPTIONS", "DELETE"},
+		AllowedHeaders:   []string{"Accept", "Content-Type", "Authorization"},
+		MaxAge:           300,
+		AllowCredentials: true,
+	})
 	router.Use(
 		render.SetContentType(render.ContentTypeJSON),
+		cors.Handler,
 		middleware.Logger,
 		middleware.DefaultCompress,
 		middleware.Recoverer,
